@@ -1,0 +1,16 @@
+D:\Program Files\Cs\Updator\Updator\obj\Debug\net6.0-windows\Updator.Form1.resources
+D:\Program Files\Cs\Updator\Updator\obj\Debug\net6.0-windows\Updator.csproj.GenerateResource.cache
+D:\Program Files\Cs\Updator\Updator\obj\Debug\net6.0-windows\Updator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Program Files\Cs\Updator\Updator\obj\Debug\net6.0-windows\Updator.AssemblyInfoInputs.cache
+D:\Program Files\Cs\Updator\Updator\obj\Debug\net6.0-windows\Updator.AssemblyInfo.cs
+D:\Program Files\Cs\Updator\Updator\obj\Debug\net6.0-windows\Updator.csproj.CoreCompileInputs.cache
+D:\Program Files\Cs\Updator\Updator\bin\Debug\net6.0-windows\Updator.exe
+D:\Program Files\Cs\Updator\Updator\bin\Debug\net6.0-windows\Updator.deps.json
+D:\Program Files\Cs\Updator\Updator\bin\Debug\net6.0-windows\Updator.runtimeconfig.json
+D:\Program Files\Cs\Updator\Updator\bin\Debug\net6.0-windows\Updator.dll
+D:\Program Files\Cs\Updator\Updator\bin\Debug\net6.0-windows\Updator.pdb
+D:\Program Files\Cs\Updator\Updator\obj\Debug\net6.0-windows\Updator.dll
+D:\Program Files\Cs\Updator\Updator\obj\Debug\net6.0-windows\refint\Updator.dll
+D:\Program Files\Cs\Updator\Updator\obj\Debug\net6.0-windows\Updator.pdb
+D:\Program Files\Cs\Updator\Updator\obj\Debug\net6.0-windows\Updator.genruntimeconfig.cache
+D:\Program Files\Cs\Updator\Updator\obj\Debug\net6.0-windows\ref\Updator.dll
