@@ -1,10 +1,5 @@
-﻿using System;
-using System.IO;
+﻿using System.IO.Compression;
 using System.ComponentModel;
-using System.Net;
-using System.Net.Http;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
 
 namespace Updator
 {
@@ -18,12 +13,13 @@ namespace Updator
         }
 
         //-----------------------------------------------------------
-        
+
         private void Submit_btn_Click(object sender, EventArgs e)
         {
             if (!isDownload)
             {
                 isDownload = true;
+                progressBar.Enabled = true;
                 if (!System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
                 {
                     ProgressText.Text = "Cannot connect to server";
@@ -35,14 +31,16 @@ namespace Updator
                 Submit_btn.Text = "Done";
                 Submit_btn.Enabled = false;
 
-                downloadWork.RunWorkerAsync();
+                downloadWorker.RunWorkerAsync();
+                progressBar.Style = ProgressBarStyle.Marquee;
+                progressBar.MarqueeAnimationSpeed = 50;
             }
             else
             {
                 Application.Exit();
             }
         }
-        
+
         private void Cancel_btn_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -50,12 +48,15 @@ namespace Updator
 
         //-----------------------------------------------------------
 
-        private async void downloadWork_DoWork(object sender, DoWorkEventArgs e)
+        private async Task Download()
         {
-            string path, downloadURL;
+            string path, fileURL, downloadURL;
             HttpClient client = new HttpClient();
-            path = Application.StartupPath + @"1.0.0.zip";
-            downloadURL = download_URL();
+            HttpClient _client = new HttpClient();
+
+            path = Application.StartupPath + @"files.zip";
+            fileURL = "https://drive.google.com/uc?export=download&id=1H_mkmsD34GGfC68_GByXcv832inwTDHu";
+            downloadURL = await _client.GetStringAsync(fileURL);
 
             using (HttpResponseMessage response = client.GetAsync(downloadURL, HttpCompletionOption.ResponseHeadersRead).Result)
             {
@@ -81,16 +82,27 @@ namespace Updator
 
                             totalRead += read;
                             totalReads += 1;
-
-                            if (totalReads % 2000 == 0)
-                            {
-                                Debug.WriteLine(string.Format("total bytes downloaded so far: {0:n0}", totalRead));
-                            }
                         }
                     }
                     while (isMoreToRead);
                 }
             }
+        }
+
+        private async void downloadWork_DoWork(object sender, DoWorkEventArgs e)
+        {
+            var task = Download();
+            task.Wait();
+
+            string _path = Application.StartupPath;
+
+            if (Directory.Exists(_path + @"ReMind"))
+            {
+                await Task.Run(() => Directory.Delete(_path + @"ReMind", true));
+            }
+            await Task.Run(() => ZipFile.ExtractToDirectory(_path + @"files.zip", _path + @"ReMind"));
+
+            await Task.Run(() => File.Delete(_path + @"files.zip"));
         }
 
         private void downloadWork_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -100,16 +112,12 @@ namespace Updator
 
         private void downloadWork_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Submit_btn.Enabled = true;
             Cancel_btn.Enabled = false;
-            //ProgressText.Text = "Download Complete!";
-        }
-
-        private string download_URL()
-        {
-            //return "https://drive.google.com/file/d/19MqoIKewBie9MINqspoAxS1oMQnTdOa9/view?usp=drive_link";
-            
-            return "https://drive.google.com/u/0/uc?id=19MqoIKewBie9MINqspoAxS1oMQnTdOa9&export=download&confirm=t&uuid=64d3da8f-ae7f-4be1-9f16-6b3d1f2a3492&at=AB6BwCC_WQW1VJpQhX2INb9jlUcB:1692152818464";
+            Submit_btn.Enabled = true;
+            Submit_btn.Text = "Done";
+            ProgressText.Text = "Complete!";
+            progressBar.Style = ProgressBarStyle.Blocks;
+            progressBar.Value = 100;
         }
     }
 }

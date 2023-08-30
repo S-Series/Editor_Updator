@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Program Files\\Cs\\Updator\\Updator\\Updator.csproj": {}
+    "D:\\Program Files\\Cs\\Editor_Updator\\Updator\\Updator.csproj": {}
   },
   "projects": {
-    "D:\\Program Files\\Cs\\Updator\\Updator\\Updator.csproj": {
+    "D:\\Program Files\\Cs\\Editor_Updator\\Updator\\Updator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Program Files\\Cs\\Updator\\Updator\\Updator.csproj",
+        "projectUniqueName": "D:\\Program Files\\Cs\\Editor_Updator\\Updator\\Updator.csproj",
         "projectName": "Updator",
-        "projectPath": "D:\\Program Files\\Cs\\Updator\\Updator\\Updator.csproj",
+        "projectPath": "D:\\Program Files\\Cs\\Editor_Updator\\Updator\\Updator.csproj",
         "packagesPath": "C:\\Users\\UserOne\\.nuget\\packages\\",
-        "outputPath": "D:\\Program Files\\Cs\\Updator\\Updator\\obj\\",
+        "outputPath": "D:\\Program Files\\Cs\\Editor_Updator\\Updator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

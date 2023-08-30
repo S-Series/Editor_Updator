@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "thheWBYm1dNxsMojL0YLz5LDs8tPf/63ApYVa/Br1TgXpFv6GCRYkGoXKOrFC548VPMMvVEJEvAcyne9qKC6gg==",
+  "dgSpecHash": "WtkToyORymlULZBZtFjGjpf9ocHAd58AMLSPXhmUCZbjv+dJ6ZqLgAesG3d0QBAjh4ipAW+Vvd16UN9weQtkCA==",
   "success": true,
-  "projectFilePath": "D:\\Program Files\\Cs\\Updator\\Updator\\Updator.csproj",
+  "projectFilePath": "D:\\Program Files\\Cs\\Editor_Updator\\Updator\\Updator.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -28,84 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ProgressText = new System.Windows.Forms.Label();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.Submit_btn = new System.Windows.Forms.Button();
-            this.Cancel_btn = new System.Windows.Forms.Button();
-            this.downloadWork = new System.ComponentModel.BackgroundWorker();
-            this.SuspendLayout();
+            ProgressText = new Label();
+            progressBar = new ProgressBar();
+            Submit_btn = new Button();
+            Cancel_btn = new Button();
+            downloadWorker = new System.ComponentModel.BackgroundWorker();
+            SuspendLayout();
             // 
             // ProgressText
             // 
-            this.ProgressText.AutoSize = true;
-            this.ProgressText.Location = new System.Drawing.Point(22, 35);
-            this.ProgressText.Margin = new System.Windows.Forms.Padding(5);
-            this.ProgressText.Name = "ProgressText";
-            this.ProgressText.Size = new System.Drawing.Size(141, 12);
-            this.ProgressText.TabIndex = 0;
-            this.ProgressText.Text = "Press Start to Download";
+            ProgressText.AutoSize = true;
+            ProgressText.Location = new Point(22, 44);
+            ProgressText.Margin = new Padding(5, 6, 5, 6);
+            ProgressText.Name = "ProgressText";
+            ProgressText.Size = new Size(137, 15);
+            ProgressText.TabIndex = 0;
+            ProgressText.Text = "Press Start to Download";
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(19, 64);
-            this.progressBar.Margin = new System.Windows.Forms.Padding(10);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(396, 23);
-            this.progressBar.TabIndex = 1;
+            progressBar.Location = new Point(19, 80);
+            progressBar.Margin = new Padding(10, 12, 10, 12);
+            progressBar.Name = "progressBar";
+            progressBar.Size = new Size(396, 29);
+            progressBar.TabIndex = 1;
             // 
             // Submit_btn
             // 
-            this.Submit_btn.Location = new System.Drawing.Point(340, 103);
-            this.Submit_btn.Name = "Submit_btn";
-            this.Submit_btn.Size = new System.Drawing.Size(75, 23);
-            this.Submit_btn.TabIndex = 2;
-            this.Submit_btn.Text = "Start";
-            this.Submit_btn.UseVisualStyleBackColor = true;
-            this.Submit_btn.Click += new System.EventHandler(this.Submit_btn_Click);
+            Submit_btn.Location = new Point(340, 129);
+            Submit_btn.Margin = new Padding(3, 4, 3, 4);
+            Submit_btn.Name = "Submit_btn";
+            Submit_btn.Size = new Size(75, 29);
+            Submit_btn.TabIndex = 2;
+            Submit_btn.Text = "Start";
+            Submit_btn.UseVisualStyleBackColor = true;
+            Submit_btn.Click += Submit_btn_Click;
             // 
             // Cancel_btn
             // 
-            this.Cancel_btn.Location = new System.Drawing.Point(259, 103);
-            this.Cancel_btn.Name = "Cancel_btn";
-            this.Cancel_btn.Size = new System.Drawing.Size(75, 23);
-            this.Cancel_btn.TabIndex = 3;
-            this.Cancel_btn.Text = "Cancel";
-            this.Cancel_btn.UseVisualStyleBackColor = true;
-            this.Cancel_btn.Click += new System.EventHandler(this.Cancel_btn_Click);
+            Cancel_btn.Location = new Point(259, 129);
+            Cancel_btn.Margin = new Padding(3, 4, 3, 4);
+            Cancel_btn.Name = "Cancel_btn";
+            Cancel_btn.Size = new Size(75, 29);
+            Cancel_btn.TabIndex = 3;
+            Cancel_btn.Text = "Cancel";
+            Cancel_btn.UseVisualStyleBackColor = true;
+            Cancel_btn.Click += Cancel_btn_Click;
             // 
-            // downloadWork
+            // backgroundWorker1
             // 
-            this.downloadWork.WorkerReportsProgress = true;
-            this.downloadWork.DoWork += new System.ComponentModel.DoWorkEventHandler(this.downloadWork_DoWork);
-            this.downloadWork.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.downloadWork_ProgressChanged);
-            this.downloadWork.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.downloadWork_RunWorkerCompleted);
+            downloadWorker.DoWork += downloadWork_DoWork;
+            downloadWorker.ProgressChanged += downloadWork_ProgressChanged;
+            downloadWorker.RunWorkerCompleted += downloadWork_RunWorkerCompleted;
+            downloadWorker.WorkerReportsProgress = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(434, 141);
-            this.Controls.Add(this.Cancel_btn);
-            this.Controls.Add(this.Submit_btn);
-            this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.ProgressText);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.Name = "Form1";
-            this.Text = "Editor Updator";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            ClientSize = new Size(434, 176);
+            Controls.Add(Cancel_btn);
+            Controls.Add(Submit_btn);
+            Controls.Add(progressBar);
+            Controls.Add(ProgressText);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            ImeMode = ImeMode.On;
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "Form1";
+            Text = "Editor Updator";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.Label ProgressText;
-        private System.Windows.Forms.ProgressBar progressBar;
-        private System.Windows.Forms.Button Submit_btn;
-        private System.Windows.Forms.Button Cancel_btn;
-        private System.ComponentModel.BackgroundWorker downloadWork;
+        public Label ProgressText;
+        public ProgressBar progressBar;
+        public Button Submit_btn;
+        public Button Cancel_btn;
+        private System.ComponentModel.BackgroundWorker downloadWorker;
     }
 }
 

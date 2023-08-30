@@ -1,0 +1,5 @@
+D:\Program Files\Cs\Editor_Updator\Updator\bin\Release\net6.0-windows\app.publish\Updator.exe
+D:\Program Files\Cs\Editor_Updator\Updator\bin\Release\net6.0-windows\app.publish\Updator.dll
+D:\Program Files\Cs\Editor_Updator\Updator\bin\Release\net6.0-windows\app.publish\Updator.deps.json
+D:\Program Files\Cs\Editor_Updator\Updator\bin\Release\net6.0-windows\app.publish\Updator.runtimeconfig.json
+D:\Program Files\Cs\Editor_Updator\Updator\bin\Release\net6.0-windows\app.publish\Updator.pdb

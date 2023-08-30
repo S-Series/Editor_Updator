@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "fXjLVdR3WNwO5hS9wIm/Y8S6oz5ZSdZqqQjF+zrPgvjFQ1mXqcmTy+PI7zr5UEXHOKuPL3u/X1bHrvvH+e3USQ==",
+  "success": true,
+  "projectFilePath": "D:\\Program Files\\Cs\\Editor_Updator\\Updator\\Updator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\UserOne\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.21\\microsoft.netcore.app.runtime.win-x64.6.0.21.nupkg.sha512",
+    "C:\\Users\\UserOne\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.21\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.21.nupkg.sha512",
+    "C:\\Users\\UserOne\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.21\\microsoft.aspnetcore.app.runtime.win-x64.6.0.21.nupkg.sha512"
+  ],
+  "logs": []
+}

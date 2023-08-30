@@ -1,0 +1,19 @@
+C:\Users\UserOne\Desktop\Release\net6.0-windows\Updator.exe
+C:\Users\UserOne\Desktop\Release\net6.0-windows\Updator.deps.json
+C:\Users\UserOne\Desktop\Release\net6.0-windows\Updator.runtimeconfig.json
+C:\Users\UserOne\Desktop\Release\net6.0-windows\Updator.dll
+C:\Users\UserOne\Desktop\Release\net6.0-windows\Updator.pdb
+D:\Program Files\Cs\Editor_Updator\Updator\obj\Release\net6.0-windows\Updator.Form1.resources
+D:\Program Files\Cs\Editor_Updator\Updator\obj\Release\net6.0-windows\Updator.csproj.GenerateResource.cache
+D:\Program Files\Cs\Editor_Updator\Updator\obj\Release\net6.0-windows\Updator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Program Files\Cs\Editor_Updator\Updator\obj\Release\net6.0-windows\Updator.csproj.CoreCompileInputs.cache
+D:\Program Files\Cs\Editor_Updator\Updator\obj\Release\net6.0-windows\Updator.dll
+D:\Program Files\Cs\Editor_Updator\Updator\obj\Release\net6.0-windows\refint\Updator.dll
+D:\Program Files\Cs\Editor_Updator\Updator\obj\Release\net6.0-windows\Updator.pdb
+D:\Program Files\Cs\Editor_Updator\Updator\obj\Release\net6.0-windows\Updator.genruntimeconfig.cache
+D:\Program Files\Cs\Editor_Updator\Updator\obj\Release\net6.0-windows\ref\Updator.dll
+D:\Program Files\Cs\Editor_Updator\Updator\bin\Release\net6.0-windows\Updator.exe
+D:\Program Files\Cs\Editor_Updator\Updator\bin\Release\net6.0-windows\Updator.deps.json
+D:\Program Files\Cs\Editor_Updator\Updator\bin\Release\net6.0-windows\Updator.runtimeconfig.json
+D:\Program Files\Cs\Editor_Updator\Updator\bin\Release\net6.0-windows\Updator.dll
+D:\Program Files\Cs\Editor_Updator\Updator\bin\Release\net6.0-windows\Updator.pdb
