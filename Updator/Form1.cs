@@ -6,6 +6,7 @@ namespace Updator
     public partial class Form1 : Form
     {
         private bool isDownload = false;
+        private bool? isNeedUpdate = null;
 
         public Form1()
         {
@@ -24,9 +25,32 @@ namespace Updator
                 {
                     ProgressText.Text = "Cannot connect to server";
                     Submit_btn.Text = "Close";
+                    Submit_btn.Enabled = true;
                     Cancel_btn.Enabled = false;
                     return;
                 }
+
+                ProgressText.Text = "Checking Download Version...";
+                Task task = CheckVersion();
+                task.Wait();
+
+                if (isNeedUpdate == null) 
+                {
+                    ProgressText.Text = "There is Something Wrong...";
+                    Submit_btn.Text = "Close";
+                    Submit_btn.Enabled = true;
+                    Cancel_btn.Enabled = false;
+                    return;
+                }
+                else if (isNeedUpdate == false)
+                {
+                    ProgressText.Text = "It's Already Lastest Version!";
+                    Submit_btn.Text = "Close";
+                    Submit_btn.Enabled = true;
+                    Cancel_btn.Enabled = false;
+                    return;
+                }
+
                 ProgressText.Text = "Now On Downloading...";
                 Submit_btn.Text = "Done";
                 Submit_btn.Enabled = false;
@@ -47,6 +71,39 @@ namespace Updator
         }
 
         //-----------------------------------------------------------
+
+        private async Task CheckVersion()
+        {
+            string _path = Application.StartupPath;
+
+            if (File.Exists(_path + @"Info"))
+            {
+                string versionURL;
+                string[] versionText = { "", "" };
+                int[][] version = { new int[3] , new int[3] };
+                HttpClient client = new HttpClient();
+                versionURL = "";
+
+                versionText[0] = await File.ReadAllTextAsync(_path + @"Info");
+                versionText[1] = await client.GetStringAsync(versionURL);
+
+                var strings = versionText[0].Split('.');
+                version[0][0] = Convert.ToInt32(strings[0]);
+                version[0][1] = Convert.ToInt32(strings[1]);
+                version[0][2] = Convert.ToInt32(strings[2]);
+
+                strings = versionText[1].Split('.');
+                version[1][0] = Convert.ToInt32(strings[0]);
+                version[1][1] = Convert.ToInt32(strings[1]);
+                version[1][2] = Convert.ToInt32(strings[2]);
+
+                if (version[1][0] > version[0][0]) { isNeedUpdate = true; }
+                else if (version[1][1] > version[0][1]) { isNeedUpdate = true; }
+                else if (version[1][2] > version[0][2]) { isNeedUpdate = true; }
+                else { isNeedUpdate = false; }
+            }
+            else { isNeedUpdate = null; }
+        }
 
         private async Task Download()
         {
